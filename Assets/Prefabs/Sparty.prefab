@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1723877378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1723877379}
+  m_Layer: 8
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1723877379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723877378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.523, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4621522956990618193}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4621522956990618189
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,6 +45,7 @@ GameObject:
   - component: {fileID: 6045269481982890910}
   - component: {fileID: 6178815934434152846}
   - component: {fileID: -5165126700106585167}
+  - component: {fileID: 1246034130}
   m_Layer: 8
   m_Name: Sparty
   m_TagString: Player
@@ -32,7 +63,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.0845406, y: 0.73916066, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1723877379}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -265,3 +297,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1246034130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4621522956990618189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219cb67f45077164eba8eba67775935c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  jumpForce: 600
+  playerHealth: 1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 1536
+  groundCheck: {fileID: 1723877379}
+  playerCanMove: 1
+  coinSFX: {fileID: 8300000, guid: 699348c8f42cb184083067526844b634, type: 3}
+  deathSFX: {fileID: 8300000, guid: f21c9bd28bafb1b4f850a273bbabb367, type: 3}
+  fallSFX: {fileID: 8300000, guid: 23d197b8c04098f4c966467f0953df03, type: 3}
+  jumpSFX: {fileID: 8300000, guid: f746400623cd25f49abc43c6114e0439, type: 3}
+  victorySFX: {fileID: 8300000, guid: 38151ffe66151d64189cb3038f8c31d0, type: 3}
